@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Add routes that allow users to create and list users
   post '/users', to: 'users#create'
+  get '/users', to: 'users#index'
+  get '/users/:id', to: 'users#show', as: 'user'
 
   # Add routes that allow users to create, list, update, and delete posts
   post '/posts', to: 'posts#create'

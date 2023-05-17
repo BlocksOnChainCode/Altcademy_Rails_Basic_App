@@ -1,15 +1,27 @@
 class UsersController < ApplicationController
   def create
-    # Create a dummy user from the form data
     @user = User.new(user_params)
-    
-    # Save the user
+
     if @user.save
-      # If the user is saved successfully, redirect to the index action
-      redirect_to users_path
+      redirect_to users_path(@user)
+      puts "User created successfully"
     else
-      # If the user fails validation, render the index action again
       render :index
+    end
+  end
+
+  # Add a show action that finds a user by its ID and renders the show.html.erb view
+  def show
+    @user = User.find(params[:id])
+  end
+
+  # Add an index action that lists all users
+  def index
+    @users = User.all
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @users }
     end
   end
 

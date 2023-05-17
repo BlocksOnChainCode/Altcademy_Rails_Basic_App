@@ -43,3 +43,16 @@ code {
 .small {
   font-size: 0.75rem;
 }
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 1rem;
+}
+#submit-btn {
+  padding: 1rem;
+}

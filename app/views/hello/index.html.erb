@@ -1,10 +1,9 @@
 <div class="App">
   <header class="App-header">
-    <img src="Octocat.png" class="App-logo" alt="logo" />
-    <h1> Hello World! </h1>
+    <h1> Railsium </h1>
     <section>
-      <h1>Create User</h1>
-
+      <h1>Sign up!</h1>
+      
       <%= form_with model: User.new, url: users_path, local: true do |form| %>
         <div>
           <%= form.label :username %>
@@ -26,7 +25,7 @@
           <%= form.text_field :last_name %>
         </div>
 
-        <div>
+        <div id="submit-btn">
           <%= form.submit "Create User" %>
         </div>
       <% end %>
