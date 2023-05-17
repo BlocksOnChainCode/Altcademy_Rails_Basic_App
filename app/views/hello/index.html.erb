@@ -2,5 +2,35 @@
   <header class="App-header">
     <img src="Octocat.png" class="App-logo" alt="logo" />
     <h1> Hello World! </h1>
+    <section>
+      <h1>Create User</h1>
+
+      <%= form_with model: User.new, url: users_path, local: true do |form| %>
+        <div>
+          <%= form.label :username %>
+          <%= form.text_field :username %>
+        </div>
+
+        <div>
+          <%= form.label :email %>
+          <%= form.text_field :email %>
+        </div>
+
+        <div>
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name %>
+        </div>
+
+        <div>
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name %>
+        </div>
+
+        <div>
+          <%= form.submit "Create User" %>
+        </div>
+      <% end %>
+    </section>
+
   </header>
 </div>
