@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "hello#index"
+  #root "hello#index"
+  root "main#index"
 
   # Add route for sign-up page
   get '/signup', to: 'users#new', as: 'new_user'
@@ -21,4 +22,6 @@ Rails.application.routes.draw do
   get '/posts', to: 'posts#index'
   put '/posts/:id', to: 'posts#update'
   delete '/posts/:id', to: 'posts#destroy'
+
+  get '/about', to: 'about#index' #hands it off to the about controller and the index action
 end
