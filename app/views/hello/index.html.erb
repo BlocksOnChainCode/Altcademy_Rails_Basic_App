@@ -1,6 +1,11 @@
 <div class="App">
   <header class="App-header">
     <h1> Railsium </h1>
+    <div class="buttons-container">
+    <%# link_to is used for navigition trigger %>
+      <%= link_to "Sign Up", new_user_path, class: "btn btn-primary" %>
+      <%= link_to "Login", login_path, class: "btn btn-primary" %>
+    </div>
     <section>
       <h1>Sign up!</h1>
       

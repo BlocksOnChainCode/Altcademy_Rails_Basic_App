@@ -1,0 +1,16 @@
+<%= form_with(model: @user, url: users_path, local: true) do |form| %>
+  <!-- Add form fields for username, email, password, and password confirmation -->
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
+
+  <%= form.submit "Sign Up" %>
+<% end %>

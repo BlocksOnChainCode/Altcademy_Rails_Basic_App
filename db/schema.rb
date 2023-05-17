@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-#Note that the user:references in the migration generator command automatically creates the user_id column and adds a foreign key constraint for referential integrity.
-ActiveRecord::Schema[7.0].define(version: 2023_05_17_094202) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_17_120201) do
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
@@ -28,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_094202) do
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "posts", "users"

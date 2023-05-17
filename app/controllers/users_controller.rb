@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def new
+    @user = User.new
+  end
+
+
   def create
     @user = User.new(user_params)
 
@@ -6,7 +11,7 @@ class UsersController < ApplicationController
       redirect_to users_path(@user)
       puts "User created successfully"
     else
-      render :index
+      render :new
     end
   end
 
@@ -27,7 +32,10 @@ class UsersController < ApplicationController
 
   private
 
+  # Add a private user_params method that whitelists the username, email, password, and password_confirmation parameters
+  # ! This method will be used in the create action
   def user_params
-    params.require(:user).permit(:username, :email, :first_name, :last_name)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
+  
 end
